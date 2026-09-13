@@ -1,0 +1,25 @@
+# Ambiente
+.venv/
+__pycache__/
+*.pyc
+
+# Dados — os CSVs brutos vêm do Kaggle e as camadas são reprodutíveis
+# pelo pipeline (bash scripts/rodar_local.sh). Versionar Parquet incharia
+# o repositório sem ganho: o que importa é o código que os gera.
+data/raw/*.csv
+data/bronze/
+data/silver/
+data/gold/
+
+# Metastore Hive local, criado pelo tests/validar_sql.py
+metastore_db/
+derby.log
+
+# Artefatos da AWS
+.aws-sam/
+
+# macOS
+.DS_Store
+
+# Arquivos de lock do PowerPoint/Keynote/Office (criados ao abrir o .pptx)
+output/~$*.pptx
