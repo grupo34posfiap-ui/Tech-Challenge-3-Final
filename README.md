@@ -19,7 +19,7 @@ recomendação executiva.
 |---|---|
 | **1. Material executivo com DataViz e Storytelling** | [`output/Tech_Challenge_Fase3_Material_Executivo.pptx`](output/) — 26 slides |
 | **2. Diagrama da arquitetura AWS (Draw.io)** | [`architecture/arquitetura_aws.drawio`](architecture/) — editável · versão PNG em [`output/charts/00_arquitetura.png`](output/charts/) |
-| **3. Scripts e códigos** | [`src/glue_jobs/`](src/glue_jobs/) (PySpark) · [`sql/`](sql/) (Athena) · [`scripts/`](scripts/) (deploy AWS) |
+| **3. Scripts e códigos** | [`src/glue_jobs/`](src/glue_jobs/) (PySpark, o que roda de fato no Glue) · [`notebooks/`](notebooks/) (os mesmos 3 jobs em `.ipynb`, já executados, com a saída real) · [`sql/`](sql/) (Athena) · [`scripts/`](scripts/) (deploy AWS) |
 
 O pipeline rodou de fato no AWS Academy Lab, com as **28 consultas do Athena
 executadas via CLI direto contra o Trino real** (não simulação local) — 0
@@ -152,6 +152,12 @@ python src/gerar_diagrama.py
 python src/gerar_graficos.py
 python src/gerar_apresentacao.py
 ```
+
+Os mesmos 3 Glue Jobs também estão em [`notebooks/`](notebooks/) como
+`.ipynb` (gerados a partir do `.py` com [jupytext](https://jupytext.readthedocs.io/),
+já executados uma vez contra os dados reais — a saída de cada célula é a
+saída de verdade, não simulada). O `.py` continua sendo o que roda no Glue;
+o notebook é a mesma lógica em formato de leitura passo a passo.
 
 ---
 
